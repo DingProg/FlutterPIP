@@ -34,7 +34,8 @@ class DrawPIPState extends State<DrawPIPWidget> {
         height: _width,
         child: new Stack(
           children: <Widget>[
-            getBackgroundImage(),
+            getBackgroundImage(), //底部高斯模糊图片
+            //合成后的效果图片，使用CustomPaint 绘制出来
             CustomPaint(
                 painter: DrawPainter(widget._image),
                 size: Size(_width, _width)),

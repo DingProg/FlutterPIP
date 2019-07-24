@@ -13,6 +13,7 @@ class DrawImageUtils {
   static Future<flutterUi.Image> drawFrameImage(
       String originImageUrl, String frameImageUrl) {
     Completer<flutterUi.Image> completer = new Completer<flutterUi.Image>();
+    //加载图片
     Future.wait([
       OriginImage.getInstance().loadImage(originImageUrl),
       ImageLoader.load(frameImageUrl)
@@ -45,6 +46,8 @@ class DrawImageUtils {
               originHeight),
           Rect.fromLTWH(0, 0, width.toDouble(), height.toDouble()),
           paint);
+
+      //裁剪图片
       paint.blendMode = BlendMode.dstIn;
       canvas.drawImage(result[1], Offset(0, 0), paint);
       recorder.endRecording().toImage(width, height).then((image) {
@@ -62,6 +65,7 @@ class DrawImageUtils {
     Completer<flutterUi.Image> completer = new Completer<flutterUi.Image>();
     Future.wait([
       ImageLoader.load(maskImage),
+      //获取裁剪图片
       drawFrameImage(originImageUrl, frameImageUrl)
     ]).then((result) {
       Paint paint = new Paint();
@@ -71,6 +75,7 @@ class DrawImageUtils {
       int width = result[0].width;
       int height = result[0].height;
 
+      //合成
       canvas.drawImage(result[1], offset, paint);
       canvas.drawImageRect(
           result[0],
@@ -78,6 +83,8 @@ class DrawImageUtils {
               0, 0, result[0].width.toDouble(), result[0].height.toDouble()),
           Rect.fromLTWH(0, 0, width.toDouble(), height.toDouble()),
           paint);
+
+      //生成图片
       recorder.endRecording().toImage(width, height).then((image) {
         completer.complete(image);
       });

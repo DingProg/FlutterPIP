@@ -27,7 +27,7 @@ class PreviewImageWidget extends StatefulWidget {
 }
 
 class PreviewImageState extends State<PreviewImageWidget> {
-  final GlobalKey globalKey = new GlobalKey();
+  final GlobalKey pipCaptureKey = new GlobalKey();
 
   List<String> _listImageIcon = [];
   List<Offset> _imageOffset = [];
@@ -82,7 +82,7 @@ class PreviewImageState extends State<PreviewImageWidget> {
           getBottomListView()
         ]))),
         floatingActionButton: FloatingActionButton(
-          onPressed: _capturePng,
+          onPressed: _captureImage,
           tooltip: 'save',
           child: Icon(Icons.save),
         ));
@@ -90,7 +90,7 @@ class PreviewImageState extends State<PreviewImageWidget> {
 
   Widget getPIPImageWidget() {
     return RepaintBoundary(
-      key: globalKey,
+      key: pipCaptureKey,
       child: new Center(child: new DrawPIPWidget(_originImage, _image)),
     );
   }
@@ -138,9 +138,9 @@ class PreviewImageState extends State<PreviewImageWidget> {
         padding: EdgeInsets.all(20), height: 140, child: listView);
   }
 
-  Future<void> _capturePng() async {
+  Future<void> _captureImage() async {
     RenderRepaintBoundary boundary =
-        globalKey.currentContext.findRenderObject();
+        pipCaptureKey.currentContext.findRenderObject();
     var image = await boundary.toImage();
     ByteData byteData = await image.toByteData(format: ImageByteFormat.png);
     Uint8List pngBytes = byteData.buffer.asUint8List();
@@ -157,17 +157,17 @@ class PreviewImageState extends State<PreviewImageWidget> {
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Save success'),
+          title: Text('PIP Path'),
           content: SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
-                Text('Image is save in ${path}'),
+                Text('Image is save in $path'),
               ],
             ),
           ),
           actions: <Widget>[
             FlatButton(
-              child: Text('exit'),
+              child: Text('退出'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
