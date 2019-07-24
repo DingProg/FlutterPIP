@@ -2,15 +2,15 @@
 
 继续上一篇 [Flutter侧滑栏及城市选择UI的实现](https://juejin.im/post/5d316609f265da1b6836f593)，今天继续讲Flutter的实现篇，画中画效果的实现。先看一下PIP的实现效果.
 
+![](https://github.com/DingProg/FlutterPIP/blob/master/screen/home.png)
+![](https://github.com/DingProg/FlutterPIP/blob/master/screen/main.png)
+
 ![](https://github.com/DingProg/FlutterPIP/blob/master/screen/pip_cd.png)
 ![](https://github.com/DingProg/FlutterPIP/blob/master/screen/pip_pao.png)
 ![](https://github.com/DingProg/FlutterPIP/blob/master/screen/pip_movie.png)
 ![](https://github.com/DingProg/FlutterPIP/blob/master/screen/pip_gloass.png)
 ![](https://github.com/DingProg/FlutterPIP/blob/master/screen/pip_photo.png)
 ![](https://github.com/DingProg/FlutterPIP/blob/master/screen/pip_draw.png)
-
-![](https://github.com/DingProg/FlutterPIP/blob/master/screen/home.png)
-![](https://github.com/DingProg/FlutterPIP/blob/master/screen/main.png)
 
 更多效果请查看PIP DEMO
 代码地址:[FlutterPIP](https://github.com/DingProg/FlutterPIP)
@@ -137,7 +137,7 @@ Flutter 中也有相同的API，通过设置画笔Paint的blendMode属性，可�
 
 我们要用到一个Frame图片（frame.png），用来和原图进行混合，Frame图片如下
 
-![](https://github.com/DingProg/FlutterPIP/blob/master/screen/frame.png)
+[frame.png](https://github.com/DingProg/FlutterPIP/blob/master/screen/frame.png)
 
 
 实现代码
