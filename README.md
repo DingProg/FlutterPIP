@@ -9,6 +9,9 @@
 ![](https://github.com/DingProg/FlutterPIP/blob/master/screen/pip_photo.png)
 ![](https://github.com/DingProg/FlutterPIP/blob/master/screen/pip_draw.png)
 
+![](https://github.com/DingProg/FlutterPIP/blob/master/screen/home.png)
+![](https://github.com/DingProg/FlutterPIP/blob/master/screen/main.png)
+
 更多效果请查看PIP DEMO
 代码地址:[FlutterPIP](https://github.com/DingProg/FlutterPIP)
 
