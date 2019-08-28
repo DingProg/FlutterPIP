@@ -1,6 +1,6 @@
 # 前言
 
-继续上一篇 [Flutter侧滑栏及城市选择UI的实现](https://juejin.im/post/5d316609f265da1b6836f593)，今天继续讲Flutter的实现篇，画中画效果的实现。先看一下PIP的实现效果.
+先看一下PIP的实现效果.
 
 ![](https://github.com/DingProg/FlutterPIP/blob/master/screen/home.png)
 ![](https://github.com/DingProg/FlutterPIP/blob/master/screen/main.png)
@@ -12,8 +12,7 @@
 ![](https://github.com/DingProg/FlutterPIP/blob/master/screen/pip_photo.png)
 ![](https://github.com/DingProg/FlutterPIP/blob/master/screen/pip_draw.png)
 
-更多效果请查看PIP DEMO
-代码地址:[FlutterPIP](https://github.com/DingProg/FlutterPIP)
+更多效果请查看 [v1.0.0](https://github.com/DingProg/FlutterPIP/releases/tag/v1.0.0)
 
 # 为什么会有此文?
 一天在浏览朋友圈时，发现了一个朋友发了一张图（当然不是女朋友，但是个女的），类似上面效果部分. 一看效果挺牛啊，这是怎么实现的呢？心想要不自己实现一下吧？于是开始准备用Android实现一下.
